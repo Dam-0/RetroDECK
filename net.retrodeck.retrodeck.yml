@@ -89,7 +89,7 @@ modules:
         echo "Version is $VERSION"
     sources:
       - type: git
-        url: https://github.com/XargonWan/RetroDECK.git
+        url: https://github.com/Dam-0/RetroDECK.git
         branch: main
 
   - name: xmlstarlet
@@ -560,15 +560,14 @@ modules:
   - name: Yuzu
     buildsystem: simple
     build-commands:
-      - chmod +x yuzu*.AppImage
-      - ./yuzu*.AppImage --appimage-extract
+      - chmod +x Linux*.AppImage
+      - ./Linux*.AppImage --appimage-extract
       - mkdir -p "${FLATPAK_DEST}/yuzu"
       - cp -r squashfs-root/* "${FLATPAK_DEST}/yuzu"
       - ln -s "${FLATPAK_DEST}/yuzu/usr/bin/yuzu" "${FLATPAK_DEST}/bin/yuzu"
     sources:
       - type: file
-        url: https://github.com/yuzu-emu/yuzu-mainline/releases/download/mainline-0-1465/yuzu-mainline-20230611-b9fc07fc0.AppImage
-        sha256: 3a5c90947d0e5ca839921a4b77ec11b71176dcd4fb6f64c81757af1ba0f6f4d3
+        url: https://github.com/pineappleEA/pineapple-src/releases/download/EA-3754/Linux-Yuzu-EA-3754.AppImage
 
   # Yuzu - END
 
